@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="JsbSuite" verbose="1" >
+    <test name = "JsbTest" preserve-order="true"><!--顺序执行method-->
+        <classes>
+            <class name="BasicTest">
+                <methods>
+                    <include name = "testNewBill" /><!--受理开单-->
+                    <exclude name = "depart" /><!--配载发车-->
+                    <exclude name="signDepart"/><!--扫码签车-->
+                    <exclude name="departManage"/><!--到车管理-->
+                    <exclude name="departArrival"/><!--到车签收-->
+                    <exclude name="pick"/><!--付货-->
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
