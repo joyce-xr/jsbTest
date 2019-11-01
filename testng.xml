@@ -4,9 +4,9 @@
         <classes>
             <class name="BasicTest">
                 <methods>
-                    <include name = "testNewBill" /><!--受理开单-->
+                    <exclude name = "testNewBill" /><!--受理开单-->
                     <exclude name = "depart" /><!--配载发车-->
-                    <exclude name="signDepart"/><!--扫码签车-->
+                    <include name="signDepart"/><!--扫码签车-->
                     <exclude name="departManage"/><!--到车管理-->
                     <exclude name="departArrival"/><!--到车签收-->
                     <exclude name="pick"/><!--付货-->

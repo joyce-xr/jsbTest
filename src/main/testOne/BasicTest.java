@@ -264,7 +264,9 @@ public class BasicTest {
         driver.findElementByAndroidUIAutomator("new UiSelector().text(\"扫码签车\")").click();
         //Thread.sleep(3000);
         driver.findElementById("edt_scan").sendKeys(packSn);
-        driver.getKeyboard().pressKey("KEYCODE_ENTER");//模拟回车按键
+        //driver.getKeyboard().pressKey("KEYCODE_ENTER");//模拟回车按键
+        //小键盘回车键
+        driver.getKeyboard().pressKey("KEYCODE_NUMPAD_ENTER");
 
     }
 
