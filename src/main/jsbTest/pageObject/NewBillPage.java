@@ -76,4 +76,10 @@ public class NewBillPage {
         element = driver.findElement(By.id("btn_save"));
         return element;
     }
+
+    //返回按钮
+    public WebElement getReturnBtn(){
+        element = driver.findElement(By.id("img_left_btn"));
+        return element;
+    }
 }
