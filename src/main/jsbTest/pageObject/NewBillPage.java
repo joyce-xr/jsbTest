@@ -35,9 +35,51 @@ public class NewBillPage {
         return element;
     }
 
+    //包裹数输入弹框的确认按钮
+    public WebElement getPackNumEnsure(){
+        element = driver.findElement(By.id("btn_ensure"));
+        return element;
+    }
+
     //代收金额
     public WebElement getGoodsAmt(){
         element = driver.findElement(By.id("edt_goods_price"));
+        return element;
+    }
+
+    //收款账户-主
+    public WebElement getAccount(){
+        element = driver.findElement(By.id("tv_receive_account_edit"));
+        return element;
+    }
+
+    //新增收款账户-tab
+    public WebElement getNewAccount(){
+        element = driver.findElementByAndroidUIAutomator("new UiSelector().textContains(\"收款账号\")");
+        return element;
+    }
+
+    //收款账号-输入框
+    public WebElement getAccountNo(){
+        element = driver.findElement(By.id("edt_account"));
+        return element;
+    }
+
+    //收款账户名-输入框
+    public WebElement getAccountName(){
+        element = driver.findElement(By.id("edt_account_name"));
+        return  element;
+    }
+
+    //收款银行-输入框
+    public WebElement getAccountBank(){
+        element = driver.findElement(By.id("edt_account_no"));
+        return  element;
+    }
+
+    //新增收款账户-保存按钮
+    public  WebElement getAccountSaveBtn(){
+        element = driver.findElement(By.id("btn_save"));
         return element;
     }
 
@@ -60,7 +102,7 @@ public class NewBillPage {
     }
 
     //物流备注
-    public WebElement getRemark(){
+    public WebElement getRemarks(){
         element = driver.findElement(By.id("edt_remark"));
         return element;
     }
@@ -81,5 +123,11 @@ public class NewBillPage {
     public WebElement getReturnBtn(){
         element = driver.findElement(By.id("img_left_btn"));
         return element;
+    }
+
+    //运单号(格式例如——-------托运单号：0000139)
+    public String getShowSn(){
+        String showSn = driver.findElement(By.id("tv_num")).getText().split("：")[1];
+        return showSn;
     }
 }
