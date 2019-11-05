@@ -6,6 +6,10 @@ public class DepartArrivalPage {
     AndroidDriver driver;
     WebElement element;
 
+    public DepartArrivalPage(AndroidDriver driver){
+        this.driver = driver;
+    }
+
     //到车签收-按钮-默认只有一个
     public WebElement getSignBtn(){
         element = driver.findElement(By.id("tv_sign"));

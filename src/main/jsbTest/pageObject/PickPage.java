@@ -7,6 +7,10 @@ public class PickPage {
     AndroidDriver driver;
     WebElement element;
 
+    public PickPage(AndroidDriver driver){
+        this.driver = driver;
+    }
+
     //搜索：单号输入框
     public WebElement getBillNoSearch(){
         element = driver.findElement(By.id("edt_search"));
@@ -34,6 +38,12 @@ public class PickPage {
     //确认付货按钮
     public WebElement getEnsureBtn(){
         element = driver.findElement(By.id("tv_sure"));
+        return element;
+    }
+
+    //返回
+    public WebElement getReturnBtn(){
+        element = driver.findElement(By.id("img_left_btn"));
         return element;
     }
 }

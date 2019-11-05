@@ -4,7 +4,7 @@ import io.appium.java_client.touch.offset.PointOption;
 
 public class NewBillFunction {
 
-    public void execute(AndroidDriver driver, String billNotes, String packNum, String goodsAmt, String shipPmt, String shipAmt, String otherAmt, String arrival){
+    public void newBill(AndroidDriver driver, String billNotes, String packNum, String goodsAmt, String shipPmt, String shipAmt, String otherAmt, String arrival){
 
         System.out.println("----------------------进入受理开单TestModules----------------------");
         System.out.println("----------------------打印参数：----------------------" +billNotes);
@@ -28,7 +28,7 @@ public class NewBillFunction {
 
         //到达站
         newBillPage.getArrival().click();
-        driver.findElementByAndroidUIAutomator("new UiSelector().text(\"" + arrival + "\")").click();
+        newBillPage.getArrivalNet1(arrival).click();
 
         //上划——oppo r9tm——x:500  y:1450~~~~~ x:500  y:250
         PointOption pointOption = new PointOption();
@@ -58,7 +58,7 @@ public class NewBillFunction {
 
         //运费
         newBillPage.getShipPmt().click();//运费方式
-        driver.findElementByAndroidUIAutomator("new UiSelector().text(\""+shipPmt+"\")").click();
+        newBillPage.getShipPmtVal(shipPmt).click();
         newBillPage.getShipAmt().sendKeys(shipAmt);//运费金额
 
         //其他费用

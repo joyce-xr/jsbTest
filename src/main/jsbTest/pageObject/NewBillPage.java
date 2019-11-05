@@ -29,6 +29,12 @@ public class NewBillPage {
         return element;
     }
 
+    //到达网点
+    public WebElement getArrivalNet1(String netName){
+        element = driver.findElementByAndroidUIAutomator("new UiSelector().text(\"" + netName + "\")");
+        return element;
+    }
+
     //包裹数
     public WebElement getPackNum(){
         element = driver.findElement(By.id("etAmount"));
@@ -83,11 +89,18 @@ public class NewBillPage {
         return element;
     }
 
-    //运费方式
+    //运费方式-控件
     public WebElement getShipPmt(){
         element = driver.findElement(By.id("tv_pay_way"));
         return element;
     }
+
+    //运费方式-值
+    public WebElement getShipPmtVal(String shipPmt){
+        element = driver.findElementByAndroidUIAutomator("new UiSelector().text(\""+shipPmt+"\")");
+        return element;
+    }
+
 
     //运费金额
     public WebElement getShipAmt(){

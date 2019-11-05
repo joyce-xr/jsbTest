@@ -11,6 +11,19 @@ public class DepartPage {
         this.driver = driver;
     }
 
+
+    //一级菜单
+    public WebElement getLevelOne(String levelOne){
+        element = driver.findElementByAndroidUIAutomator("new UiSelector().text(\""+levelOne+"\")");
+        return element;
+    }
+
+    //二级菜单
+    public WebElement getLevelTwo(String levelTwo){
+        element = driver.findElementByXPath("//*[@resource-id='com.jiaparts.jsj_wl:id/tv_title_child'][@text='"+levelTwo+"']");
+        return element;
+    }
+
     //全部发车按钮
     public WebElement getSendAll(){
         element = driver.findElement(By.id("btn_send_all"));
