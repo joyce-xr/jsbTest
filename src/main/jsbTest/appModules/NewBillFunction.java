@@ -4,7 +4,7 @@ import io.appium.java_client.touch.offset.PointOption;
 
 public class NewBillFunction {
 
-    public void newBill(AndroidDriver driver, String billNotes, String packNum, String goodsAmt, String shipPmt, String shipAmt, String otherAmt, String arrival){
+    public static void newBill(AndroidDriver driver, String billNotes, String packNum, String goodsAmt, String shipPmt, String shipAmt, String otherAmt, String arrival){
 
         System.out.println("----------------------进入受理开单TestModules----------------------");
         System.out.println("----------------------打印参数：----------------------" +billNotes);
