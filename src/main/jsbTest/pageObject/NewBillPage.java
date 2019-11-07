@@ -19,7 +19,7 @@ public class NewBillPage {
 
     //收货人电话
     public WebElement getRcvPhone(){
-        element = driver.findElement(By.id("edt_deliver_phone"));
+        element = driver.findElement(By.id("edt_receiver_phone"));
         return element;
     }
 
@@ -35,9 +35,15 @@ public class NewBillPage {
         return element;
     }
 
-    //包裹数
-    public WebElement getPackNum(){
+    //包裹数-主页面输入框
+    public WebElement getEdtPack(){
         element = driver.findElement(By.id("etAmount"));
+        return element;
+    }
+
+    //包裹数弹框-输入框
+    public WebElement getPackNum(){
+        element = driver.findElement(By.id("edt_count"));
         return element;
     }
 

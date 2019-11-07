@@ -84,6 +84,7 @@ public class PrimaryTest {
     @AfterClass
     public void tearDown(){
         System.out.println("----------------AfterClass-----------------");
+
         driver.quit();
     }
 }

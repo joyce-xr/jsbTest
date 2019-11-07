@@ -20,8 +20,8 @@ public class DepartFunction {
         //发车
         departPage.getSendAll().click();
         departPage.getEnsure().click();
+        //返回
         departPage.getReturnBtn().click();
-
 
     }
 }

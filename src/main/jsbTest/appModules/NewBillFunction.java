@@ -4,10 +4,10 @@ import io.appium.java_client.touch.offset.PointOption;
 
 public class NewBillFunction {
 
-    public static void newBill(AndroidDriver driver, String billNotes, String packNum, String goodsAmt, String shipPmt, String shipAmt, String otherAmt, String arrival){
+    public static void newBill(AndroidDriver driver, String billNotes, String arrival, String packNum, String goodsAmt, String shipPmt, String shipAmt, String otherAmt ){
 
         System.out.println("----------------------进入受理开单TestModules----------------------");
-        System.out.println("----------------------打印参数：----------------------" +billNotes);
+        System.out.println("----------------------打印参数：" +billNotes +", " + arrival+ ", " + packNum + ", "+ goodsAmt+", "+shipPmt + ", " + shipAmt+", "+otherAmt);
 
         //页面对象
         HomePage homePage = new HomePage(driver);
@@ -22,7 +22,7 @@ public class NewBillFunction {
         driver.getKeyboard().pressKey("KEYCODE_1");
         newBillPage.getRcvPhone().click();
         newBillPage.getRcvPhone().sendKeys("1270000000");
-        driver.getKeyboard().pressKey("KEYCODE_1");
+        driver.getKeyboard().pressKey("KEYCODE_2");
 
         driver.hideKeyboard();
 
@@ -37,7 +37,7 @@ public class NewBillFunction {
                 .release().perform();
 
         //包裹数
-        newBillPage.getPackNum().click();
+        newBillPage.getEdtPack().click();
         newBillPage.getPackNum().clear();
         newBillPage.getPackNum().sendKeys(packNum);
         newBillPage.getPackNumEnsure().click();
@@ -69,6 +69,9 @@ public class NewBillFunction {
 
         //点击收件
         newBillPage.getReceiveButton().click();
+
+        //返回
+        newBillPage.getReturnBtn().click();
 
     }
 }
